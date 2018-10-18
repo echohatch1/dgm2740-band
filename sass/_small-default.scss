@@ -1,0 +1,223 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+/*  apply a natural box layout model to all elements  */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/* ------------- BODY ------------- */
+body {
+	font-family: $defaultFont;
+	font-size: 16px;
+	font-weight: $normalWeight;
+    min-height: 100%;
+    position: relative;
+}
+
+
+/* ------------- HEADER ------------- */
+header {
+    height:130px;
+    width: 100%;
+    background-color: $primaryColor;
+    position: relative;
+    .header-div {
+        max-width: $maxWidth;
+    }
+	h1, h2 {
+        padding-left: $gutter; 
+        font-weight: $normalWeight;
+        margin-left: 110px;
+        position: relative;
+        bottom: -50px;
+    } //end both
+
+    figure.logo {
+        position: absolute;
+        bottom: 10px; 
+        left: 2%;
+        max-width: 95px;
+        img {
+            width: 100%;
+        }
+    }
+    
+	h1{
+        font-size: 1.2rem; 
+        padding-top:20px;
+        color: $fontColor;
+    } //end h1
+    
+	h2{
+        font-size: .8rem;
+        color: $fontColor;
+        margin-top: .5rem;
+    } //end h2
+    
+/* -------- social icons -------------- */
+    .social-icons {
+        width: 180px;
+        position: absolute;
+        top: $gutter;
+        right: 0;
+    ul.social li {
+        list-style-type: none;
+        float: left;
+        width: 25%;
+    }
+    ul.social li a {
+        display: block;
+        margin: 0 auto;
+        background-image: url(../images/socialSprites.png);
+        height: 45px;
+        width: 45px;
+    }
+    ul.social .twitter a {background-position: -90px -45px;}
+    ul.social .facebook a {background-position: -45px -45px;}
+    ul.social .youtube a {background-position: -225px -45px;}
+    
+    ul.social .twitter a:hover {background-position: -90px 0px;}
+    ul.social .facebook a:hover {background-position: -45px 0px;}
+    ul.social .youtube a:hover {background-position: -225px 0px;}
+    }
+} //end header
+
+
+
+/*  ------------- NAV -------------  */
+nav {
+	background-color: $secondaryColor;
+    width: 100%;
+    div {
+       max-width: $maxWidth; 
+    }
+	ul li {
+		float: left;
+		width: 25%;
+		border-right: 1px solid rgba(0,0,0,0.3);
+	}// end li
+	ul li:last-child {border-right: none;}
+	ul li a {
+		display: block;
+		text-align: center;
+		font-weight: $boldWeight;
+		padding: .5rem 0;
+		color:$fontColor;
+		text-decoration: none;
+		
+	} // end anchors
+	ul li.active a {
+		background-color: $fontColor;
+        color: $secondaryColor;
+	}// end active
+	ul li a:hover {
+		color: $fontColor;
+		background-color: $primaryColor;
+	} // end hover
+} // end nav
+
+
+
+/*  ------------- MAIN -------------  */
+
+main {
+    min-height: 20rem;
+    background-color: $fontColor;
+    display: block;
+    float: left;
+    clear: both;
+    #main-div {
+        margin-bottom: $gutterdbl;
+        
+    }
+    
+	h1 {
+		font-size: 2rem;
+		margin-top: 1rem;
+		color: $primaryColor;
+	} // end h1
+	
+	h2 {
+		font-size: 1.5rem;
+		margin: .75rem 0 .5rem 0;
+		color: $secondaryColor;
+	} // end h2
+	
+	p {
+		line-height: 100%;
+        margin: 0 $gutter;
+        text-align: left;
+	} // end p
+	
+    
+    figure.circle-image {
+        float: right;
+        padding: 0 0 1rem 1rem;
+        background: red;
+        margin: .5rem;
+        margin-right: -90px;
+        margin-top:-40px;
+        clip-path: circle(20% at 50% 45%);
+        shape-outside: circle(30% at 150px 50px);
+        }
+    
+    
+    
+/*-------column layout---------*/
+    .row {clear:both;
+            float: left;
+    }
+    .column {padding: 0 $gutter;}
+    @for $i from 1 through 12 {
+        $w: ($i / 12) * 100%;
+        .small-#{$i} {width: $w; float: left;}
+    }
+    
+    .perf-images {
+        display: inline-grid;
+  grid-template-rows: 1;
+  grid-template-columns: 1;
+        justify-items: center;
+        figure {
+            width: 100%;
+            padding-bottom: $gutter;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    
+       
+} // end main
+
+
+/*  ------------- FOOTER -------------  */
+footer {
+    display: block;
+    float: left;
+	width: 100%;
+	background-color: $secondaryColor;
+    margin-top: $gutterdbl;
+    div {
+        max-width: $maxWidth;
+        
+    }
+	p {
+		text-align: center;
+		color: $fontColor;
+		padding: .75rem 0;
+		font-size: .9rem;
+	} // end p
+	p a {
+        color: $fontColor;
+        text-decoration: none;
+    }
+} // end footer
+
+
+
+/*----- Clearfix: Force an Element not to collapse -----*/
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
