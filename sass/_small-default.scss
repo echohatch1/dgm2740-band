@@ -174,8 +174,8 @@ main {
     
     .perf-images {
         display: inline-grid;
-  grid-template-rows: 1;
-  grid-template-columns: 1;
+        grid-template-rows: 1;
+        grid-template-columns: 1;
         justify-items: center;
         figure {
             width: 100%;
