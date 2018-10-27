@@ -19,9 +19,11 @@ header {
     height:130px;
     width: 100%;
     background-color: $primaryColor;
-    position: relative;
+    
     .header-div {
         max-width: $maxWidth;
+        position: relative;
+
     }
 	h1, h2 {
         padding-left: $gutter; 
@@ -33,9 +35,9 @@ header {
 
     figure.logo {
         position: absolute;
-        bottom: 10px; 
-        left: 2%;
-        max-width: 95px;
+        top: 10px; 
+        left: 10px;
+        width: 95px;
         img {
             width: 100%;
         }
@@ -57,7 +59,7 @@ header {
     .social-icons {
         width: 180px;
         position: absolute;
-        top: $gutter;
+        top: 10px;
         right: 0;
     ul.social li {
         list-style-type: none;
@@ -121,13 +123,12 @@ nav {
 
 main {
     min-height: 20rem;
-    background-color: $fontColor;
     display: block;
     float: left;
     clear: both;
-    #main-div {
+    .main-div {
         margin-bottom: $gutterdbl;
-        
+        max-width: $maxWidth;
     }
     
 	h1 {
@@ -152,7 +153,6 @@ main {
     figure.circle-image {
         float: right;
         padding: 0 0 1rem 1rem;
-        background: red;
         margin: .5rem;
         margin-right: -90px;
         margin-top:-40px;
@@ -177,12 +177,16 @@ main {
         grid-template-rows: 1;
         grid-template-columns: 1;
         justify-items: center;
+        
         figure {
             width: 100%;
-            padding-bottom: $gutter;
+            height: 0;
+            padding-bottom: 63.79%;
             img {
                 width: 100%;
+                min-height: 20px;
             }
+            
         }
     }
     
